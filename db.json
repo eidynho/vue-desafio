@@ -1,0 +1,74 @@
+{
+    "items": [
+        {
+            "id": "91011",
+            "title": "Aprenda a Orçar",
+            "url": "https://letmegooglethat.com/?q=Aprenda%20a%20Or%C3%A7ar",
+            "description": "Uma playlist para aprender a fazer orçamento",
+            "category": "PLAYLISTS"
+        },
+        {
+            "id": "151617",
+            "title": "10 Maneiras de Economizar Dinheiro",
+            "url": "https://letmegooglethat.com/?q=10%20Maneiras%20de%20Economizar%20Dinheiro",
+            "description": "Dicas para gastar menos e economizar mais",
+            "category": "BLOG_POSTS"
+        },
+        {
+            "id": "5678",
+            "title": "Dicas de Dinheiro",
+            "url": "https://letmegooglethat.com/?q=Dicas%20de%20Dinheiro",
+            "description": "5 dicas para economizar dinheiro",
+            "category": "VIDEOS"
+        },
+        {
+            "id": "121314",
+            "title": "Noções Básicas de Finanças Pessoais",
+            "url": "https://letmegooglethat.com/?q=No%C3%A7%C3%B5es%20B%C3%A1sicas%20de%20Finan%C3%A7as%20Pessoais",
+            "description": "Conceitos essenciais de finanças pessoais",
+            "category": "PLAYLISTS"
+        },
+        {
+            "id": "181920",
+            "title": "Guia para Investir para Iniciantes",
+            "url": "https://letmegooglethat.com/?q=Guia%20para%20Investir%20para%20Iniciantes",
+            "description": "Começando a investir de forma fácil",
+            "category": "BLOG_POSTS"
+        },
+        {
+            "id": "2122",
+            "title": "Orçamento para Iniciantes",
+            "url": "https://letmegooglethat.com/?q=Or%C3%A7amento%20para%20Iniciantes",
+            "description": "Dicas para criar seu primeiro orçamento",
+            "category": "VIDEOS"
+        },
+        {
+            "id": "2324",
+            "title": "Noções Básicas sobre 401k",
+            "url": "https://letmegooglethat.com/?q=No%C3%A7%C3%B5es%20B%C3%A1sicas%20sobre%20401k",
+            "description": "O que é um 401k e como ele funciona?",
+            "category": "BLOG_POSTS"
+        },
+        {
+            "id": "2526",
+            "title": "Construindo um Fundo de Emergência",
+            "url": "https://letmegooglethat.com/?q=Construindo%20um%20Fundo%20de%20Emerg%C3%AAncia",
+            "description": "Aprenda a economizar para emergências",
+            "category": "PLAYLISTS"
+        },
+        {
+            "id": "2728",
+            "title": "Usando Cupons de Forma Eficiente",
+            "url": "https://letmegooglethat.com/?q=Usando%20Cupons%20de%20Forma%20Eficiente",
+            "description": "Dicas para obter o máximo valor dos cupons",
+            "category": "VIDEOS"
+        },
+        {
+            "id": "2930",
+            "title": "Minimizando Dívidas",
+            "url": "https://letmegooglethat.com/?q=Minimizando%20D%C3%ADvidas",
+            "description": "Estratégias para pagar dívidas rapidamente",
+            "category": "BLOG_POSTS"
+        }
+    ]
+}
