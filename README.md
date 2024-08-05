@@ -1,61 +1,62 @@
-# vue-desafio
+# Desafio Frontend Vue
 
-This template should help get you started developing with Vue 3 in Vite.
+- Framework: Vue 3 + TypeScript
+- Biblioteca de Componentes: PrimeVue (Versão 4)
+- Gerenciamento de Estado: Pinia
+- Ferramentas de Teste: Vitest
 
-## Recommended IDE Setup
+Requisitos:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [x] O sistema deve fornecer um formulário de pesquisa.
+- [x] A pesquisa pode ser acionada clicando no botão "Pesquisar".
+- [x] A pesquisa também pode ser acionada pressionando a tecla Enter.
+- [x] Um estado de carregamento deve ser exibido enquanto os resultados da pesquisa
+      estiverem sendo carregados.
+- [x] Os resultados da pesquisa devem exibir o título e a descrição de cada item.
+- [x] Clicar em um resultado de pesquisa deve abrir a URL correspondente em uma nova
+      guia.
+- [x] Os resultados da pesquisa devem ser categorizados de acordo com o tipo de
+      conteúdo.
+- [x] O usuário deve ser informado se nenhum resultado de pesquisa corresponder à sua
+      consulta.
 
-## Type Support for `.vue` Imports in TS
+## Inicialização do projeto
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Versão do node utilizada: v20.11.0
 
-## Customize configuration
+1. Certifique que o arquivo `.env` possui essas variáveis:
+```
+VITE_BASE_URL=http://127.0.0.1:3000
+VITE_API_URL=http://127.0.0.1:3333
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+2. Instale as dependências
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+> O projeto estará disponível em: http://127.0.0.1:3000/
+
+3. Inicie o projeto
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+4. Inicie o servidor (json-server)
 
 ```sh
-npm run build
+npm run json-server
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+> A API estará disponível em: http://127.0.0.1:3333/
+
+<hr>
+
+### Como rodar os testes unitários
 
 ```sh
 npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

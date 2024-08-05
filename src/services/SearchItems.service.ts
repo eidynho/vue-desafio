@@ -5,7 +5,7 @@ export async function fetchItemsByTitle(title: string): Promise<TSeachItems> {
     // simulate API loading request
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    const response = await fetch(`http://127.0.0.1:3333/items?title_like=${title}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/items?title_like=${title}`, {
       method: 'GET'
     })
 
