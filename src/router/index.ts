@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import SearchItems from '../views/SearchItemsView.vue'
 
 const router = createRouter({
+  //@ts-ignore
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {

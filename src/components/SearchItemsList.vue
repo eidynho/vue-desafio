@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { RouterLink, useRouter } from 'vue-router'
+import { ref, watchEffect } from 'vue'
+import { RouterLink, useRouter, useRoute } from 'vue-router'
 import Divider from 'primevue/divider'
 
 import type { TFetchedItemByCategory, TSeachItem } from '@/types/SearchItems.types'
@@ -8,25 +8,24 @@ import type { TFetchedItemByCategory, TSeachItem } from '@/types/SearchItems.typ
 import { useItemsStore } from '@/stores/items.store'
 
 const router = useRouter()
+const route = useRoute()
 const itemsStore = useItemsStore()
 
-const props = defineProps({
-  title: {
-    type: String,
-    required: true
-  }
-})
+const formattedSearchItem = ref<TFetchedItemByCategory | null>(null)
 
-const formattedSearchItem = computed<TFetchedItemByCategory | null>(() => {
-  const data = itemsStore.fetchedItems.find((item) => item.query === props.title)
+watchEffect(() => {
+  const title = route.params.title as string
+
+  const data = itemsStore.fetchedItems.find((item) => item.query === title)
 
   if (!data) {
-    return null
+    formattedSearchItem.value = null
+    return
   }
 
   if (!data.items.length) {
-    return {
-      query: props.title,
+    formattedSearchItem.value = {
+      query: title,
       items: {
         playlists: [],
         blogPosts: [],
@@ -34,6 +33,7 @@ const formattedSearchItem = computed<TFetchedItemByCategory | null>(() => {
       },
       total: 0
     }
+    return
   }
 
   const playlistsItems: TSeachItem[] = []
@@ -56,8 +56,8 @@ const formattedSearchItem = computed<TFetchedItemByCategory | null>(() => {
     }
   })
 
-  return {
-    query: props.title,
+  formattedSearchItem.value = {
+    query: title,
     items: {
       playlists: playlistsItems,
       blogPosts: blogPostsItems,
@@ -93,8 +93,14 @@ const itemCategories: ('playlists' | 'blogPosts' | 'videos')[] = [
   <div v-else class="mb-6">
     <div v-for="category in itemCategories" :key="category" class="flex flex-col items-start">
       <div class="border ml-6 block px-3 py-2 border-blue-500 bg-blue-500/20 rounded-lg">
-        <h3 class="uppercase font-medium text-sm">{{ category }}</h3>
+        <h3 class="uppercase font-medium text-sm">
+          {{ category }} ({{ formattedSearchItem.items[category].length }})
+        </h3>
       </div>
+
+      <span v-if="!formattedSearchItem.items[category].length" class="inline-block mx-6 mt-4 mb-2">
+        Nenhum item encontrado para essa categoria.
+      </span>
 
       <a
         v-for="item in formattedSearchItem.items[category]"

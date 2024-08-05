@@ -31,13 +31,17 @@ const onSubmit = async (event: Event) => {
     name: 'searchItem',
     params: {
       title: searchText.value
-    }
+    },
   })
 }
 </script>
 
 <template>
-  <form @submit="onSubmit" @keydown.enter="onSubmit" class="flex gap-3 lg:w-[40rem]">
+  <form
+    @submit="onSubmit"
+    @keydown.enter="onSubmit"
+    class="flex flex-col md:flex-row gap-3 lg:w-[40rem]"
+  >
     <IconField class="flex-1">
       <InputIcon class="pi pi-search" />
       <InputText v-model="searchText" placeholder="Buscar por título..." class="w-full" />
