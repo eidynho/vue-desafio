@@ -2,13 +2,13 @@
 import Button from 'primevue/button'
 import Divider from 'primevue/divider'
 
-import { useItemsStore } from '@/stores/items'
+import { useItemsStore } from '@/stores/items.store'
 
 const itemsStore = useItemsStore()
 </script>
 
 <template>
-  <div class="border-r w-80 p-4 mr-4 border-r-neutral-800 min-h-dvh">
+  <div class="border-r w-64 lg:w-80 p-4 border-r-neutral-800 min-h-dvh">
     <div class="flex flex-col gap-2">
       <Button
         icon="pi pi-search"
